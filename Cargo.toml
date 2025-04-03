@@ -4,8 +4,16 @@ members = ["src-tauri"]
 
 # https://v2.tauri.app/test/webdriver/example/#adding-tauri-to-the-cargo-project
 [profile.release]
-incremental = false
+incremental = true
 codegen-units = 1
+panic = "abort"
+opt-level = "s"
+lto = false
+
+# https://v2.tauri.app/test/webdriver/example/#adding-tauri-to-the-cargo-project
+[profile.release]
+incremental = false
+codegen-unit = 1
 panic = "abort"
 opt-level = "s"
 lto = true
